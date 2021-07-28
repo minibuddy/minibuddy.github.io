@@ -838,7 +838,7 @@ img {
 }
 .small-img img{
     width: auto;
-    max-width: 250px;
+    max-width: 190px;
 }
 .small-img iframe{
     width: auto;
