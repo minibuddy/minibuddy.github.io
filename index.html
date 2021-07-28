@@ -42,7 +42,13 @@
         <a class="nav-link btn#"  href="#">HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#services">SERVICES</a> 
+        <a class="nav-link" href="#tales">TALES</a> 
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#comics">COMICS</a> 
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#movies">ANIMATION MOVIES</a> 
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#about-us">ABOUT US</a>
@@ -59,36 +65,161 @@
         <script>
             $("banner").ripples()
         </script>
-        
+         <!--------- Banner slides------->
+        <div class="banner-slideimg">
+            <h1 class="promo-title" style="text-align: center; font-size: 22px;">Trending</h1>
+            <!--SLIDE INDEX-->
+        <div class="slideshow-container">
+        <div class="mySlides fades">
+            <div class="numbertext">1 / 3</div>
+            <img src="img/3.jpg" width="100%" onclick="location.href='#cars';">
+            <div class="text"> Cars 3 dual audio hindi-eng 480p</div>
+        </div>
+        <div class="mySlides fades">
+            <div class="numbertext">2 / 3</div>
+            <img src="img/2.jpg" width="100%" onclick="location.href='#cars';">
+            <div class="text"> Cars 2 dual audio hindi-eng 480p</div>
+        </div>
+        <div class="mySlides fades">
+            <div class="numbertext">3 / 3</div>
+            <img src="img/1.jpg" width="100%" onclick="location.href='#cars';">
+            <div class="text"> Cars 1 dual audio hindi-eng 480p</div>
+        </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+        <br>
+        <div style="text-align: center;">
+            <span class="dot" onclick="currentSlides(1)"></span>
+            <span class="dot" onclick="currentSlides(2)"></span>
+            <span class="dot" onclick="currentSlides(3)"></span>
+        </div>
+        <script>
+            var slideIndex = 1;
+showSlides(slideIndex);
+ 
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+ 
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+ 
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+ 
+ 
+// Auto Slide   if you need auto slide ,remove the commit "//"
+ 
+ 
+ 
+var slideIndex = 0;
+showSlides();
+ 
+function showSlides() {
+   var i;
+   var slides = document.getElementsByClassName("mySlides");
+   for (i = 0; i < slides.length; i++) {
+     slides[i].style.display = "none";
+    }
+    slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+   slides[slideIndex - 1].style.display = "block";
+   setTimeout(showSlides, 2500); // Change image every 2 seconds
+}
+        </script>
+        <!--SLIDE INDEX-->
+        </div>
+         <!--------- Banner slides close------->
+    
+   
       <div class="container">
         <div class="row">
         <div class="col-md-6">
           <p class="promo-title">miniBUNNY</p>
-          <p>Checkout web to get more cool projects free source code</p>
+          <p>JUST FOR FUN 🤪</p>
             <div class="welcome-btn">
-                          <a href="" class="btnv1 btnv2">BUY </a>
-                          <a href="" class="btnv1 btnv2"> CHART</a>
+                          <a href="" class="btnv1 btnv2" id="tales">TALES</a>
+                          <a href="" class="btnv1 btnv2" id="comics"> COMICS</a>
                 
             </div>
         </div>
             <div class="col-md-6 text-center">
+                
                 <img src="img/1.png" class="img-fluid">
             </div>
           </div>
-
-      
-        
         </div>
-    
         <!--<img src="img/wave1.png" class="bottom-img">-->
+        <div class="container">
+            <div class="headerbx one" id="cars movies">
+            <h1>CARTOON ANIMATIONS</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="small-img-row">
+                            <iframe src="https://files.im/embed-m74u6q4qjip4.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowFullScreen="allowFullScreen"></iframe>
+                      <p> CARS <br>dual-audio HINDI-ENG, 480p.</p>
+                    </div>
+                    <div class="small-img-row">
+                            <iframe src="https://files.im/embed-qj436of443s9.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowFullScreen="allowFullScreen"></iframe>
+                      <p> CARS 2 <br>dual-audio HINDI-ENG, 480p.</p>
+                    </div>
+                    <div class="small-img-row">
+                            <iframe src="https://files.im/embed-hul68gt4krpu.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowFullScreen="allowFullScreen"></iframe>
+                      <p> CARS 3 <br>dual-audio HINDI-ENG, 480p.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="img/1.jpg" width="100%" height="100%">
+                            <img src="img/play.png" class="play-btn" onclick="location.href='https://files.im/embed-m74u6q4qjip4.html';">
+                        </div>
+                        <p> CARS <br>dual-audio HINDI-ENG, 480p.<br><a style="color: #000;" href="https://files.im/embed-m74u6q4qjip4.html">DOWNLOAD</a></p>
+                    </div>
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="img/2.jpg" width="100%" height="100%">
+                            <img src="img/play.png" class="play-btn" onclick="location.href='https://files.im/embed-qj436of443s9.html';">
+                        </div>
+                        <p> CARS 2 <br>dual-audio HINDI-ENG, 480p.<br><a style="color: #000;" href="https://files.im/embed-qj436of443s9.html">DOWNLOAD</a></p>
+                    </div>
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="img/3.jpg" width="100%" height="100%">
+                            <img src="img/play.png" class="play-btn" onclick="location.href='https://files.im/embed-hul68gt4krpu.html';">
+                        </div>
+                        <p> CARS 3 <br>dual-audio HINDI-ENG, 480p.<br><a style="color: #000;" href="https://files.im/embed-hul68gt4krpu.html">DOWNLOAD</a></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
 </section>
+    
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#ffc0cb" fill-opacity="1" d="M0,128L21.8,128C43.6,128,87,128,131,112C174.5,96,218,64,262,69.3C305.5,75,349,117,393,122.7C436.4,128,480,96,524,96C567.3,96,611,128,655,165.3C698.2,203,742,245,785,240C829.1,235,873,181,916,165.3C960,149,1004,171,1047,154.7C1090.9,139,1135,85,1178,58.7C1221.8,32,1265,32,1309,74.7C1352.7,117,1396,203,1418,245.3L1440,288L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z"></path>
   </svg>
     
     
  <!--------object------>   
-    <section class="objects">
+    <section class="objects" id="about-us">
         <div class="info-area">
     <div class="container">
         <div class="headerbx one">
