@@ -699,6 +699,23 @@ Contact
     .search-container{
         margin-left: 0px;}
 }
+.search-btn{
+    border: none;
+    border-radius: none;
+    text-decoration: none !important;
+    outline: none;
+    background-color: transparent;
+}
+.search-btn::after{
+    border: none;
+    border-radius: none;
+    text-decoration: none !important;
+    outline: none;
+    background-color: transparent;
+}
+.dropdown-menu li a{
+    text-decoration: none !important;
+}
 /*---slider img------*/
 .mySlides {
     display: none;
