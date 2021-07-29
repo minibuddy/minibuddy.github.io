@@ -815,7 +815,7 @@ img {
 }
 /*---------------- CARTOON AIMATION------------------------*/
 .small-img-row{
-    width: 85%;
+    width: auto;
     height: auto;
     display: flex;
     background: #efefef;
