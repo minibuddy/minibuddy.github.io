@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>miniBUNNY</title>
+  <title>miniBUDDY</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -20,8 +20,8 @@
      <!----------------------------------->
      <section id="nav-bar">
 <nav class="navbar navbar-expand-md" id="header-top">
-  <a class="navbar-brand" href="#"><h1 style="font-size: 20px; margin-left: 10px;color: black;">miniBUNNY</h1></a>
-<div class="search-container">
+  <a class="navbar-brand" href="#"><h1 style="font-size: 20px; margin-left: 10px;color: black;">miniBUDDY</h1></a>
+    <div class="search-container">
     <div class="dropdown">
   <a class="search-btn dropdown-toggle" type="button" data-toggle="dropdown">Search <i class="fa fa-search"></i>  
   <span class="caret"></span></a>
@@ -48,7 +48,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
    <i class="fa fa-bars"></i>
   </button>
-  <div class="collapse  navbar-collapse"  data-toggle="collapse" data-target="#collapsibleNavbar" id="collapsibleNavbar">
+  <div class="collapse  navbar-collapse"  data-toggle="collapse" data-target="#collapsibleNavbar"  id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link btn#"  href="#">HOME</a>
@@ -60,7 +60,7 @@
         <a class="nav-link" href="#comics">COMICS</a> 
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="#movies">ANIMATION MOVIES</a> 
+        <a class="nav-link" href="movies/movies.html">ANIMATION MOVIES</a> 
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#about-us">ABOUT US</a>
@@ -78,91 +78,129 @@
             $("banner").ripples()
         </script>
          <!--------- Banner slides------->
-        <div class="banner-slideimg">
+        <div class="container">
             <h1 class="promo-title" style="text-align: center; font-size: 22px;">Trending</h1>
+            <div class=""><div class="">
             <!--SLIDE INDEX-->
-        <div class="slideshow-container">
-        <div class="mySlides fades">
-            <div class="numbertext">1 / 3</div>
-            <img src="img/3.jpg" width="100%" onclick="location.href='#cars';">
-            <div class="text"> Cars 3 dual audio hindi-eng 480p</div>
-        </div>
-        <div class="mySlides fades">
-            <div class="numbertext">2 / 3</div>
-            <img src="img/2.jpg" width="100%" onclick="location.href='#cars';">
-            <div class="text"> Cars 2 dual audio hindi-eng 480p</div>
-        </div>
-        <div class="mySlides fades">
-            <div class="numbertext">3 / 3</div>
-            <img src="img/1.jpg" width="100%" onclick="location.href='#cars';">
-            <div class="text"> Cars 1 dual audio hindi-eng 480p</div>
-        </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="slider">
+      <div class="slide active">
+        <img src="img/1.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="img/2.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="img/3.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="img/1.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="img/4.jpg" alt="">
+      </div>
+      <div class="navigation">
+        <i class="fa fa-chevron-left prev-btn"></i>
+        <i class="fa fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
     </div>
-        <br>
-        <div style="text-align: center;">
-            <span class="dot" onclick="currentSlides(1)"></span>
-            <span class="dot" onclick="currentSlides(2)"></span>
-            <span class="dot" onclick="currentSlides(3)"></span>
-        </div>
-        <script>
-            var slideIndex = 1;
-showSlides(slideIndex);
- 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
- 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
- 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      
+         <script type="text/javascript">
+    const slider = document.querySelector(".slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const slides = document.querySelectorAll(".slide");
+    const slideIcons = document.querySelectorAll(".slide-icon");
+    const numberOfSlides = slides.length;
+    var slideNumber = 0;
+
+    //image slider next button
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider previous button
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider autoplay
+    var playSlider;
+
+    var repeater = () => {
+      playSlider = setInterval(function(){
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if(slideNumber > (numberOfSlides - 1)){
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      }, 5000);
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
- 
- 
-// Auto Slide   if you need auto slide ,remove the commit "//"
- 
- 
- 
-var slideIndex = 0;
-showSlides();
- 
-function showSlides() {
-   var i;
-   var slides = document.getElementsByClassName("mySlides");
-   for (i = 0; i < slides.length; i++) {
-     slides[i].style.display = "none";
-    }
-    slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-   slides[slideIndex - 1].style.display = "block";
-   setTimeout(showSlides, 2500); // Change image every 2 seconds
-}
-        </script>
-        <!--SLIDE INDEX-->
-        </div>
+    repeater();
+
+    //stop the image slider autoplay on mouseover
+    slider.addEventListener("mouseover", () => {
+      clearInterval(playSlider);
+    });
+
+    //start the image slider autoplay again on mouseout
+    slider.addEventListener("mouseout", () => {
+      repeater();
+    });
+    </script>
+            <!--SLIDE INDEX-->
+        </div></div></div>
          <!--------- Banner slides close------->
     
    
       <div class="container">
         <div class="row">
         <div class="col-md-6">
-          <p class="promo-title">miniBUNNY</p>
+          <p class="promo-title">miniBUDDY</p>
           <p>JUST FOR FUN 🤪</p>
             <div class="welcome-btn">
                           <a href="" class="btnv1 btnv2" id="tales">TALES</a>
@@ -172,28 +210,28 @@ function showSlides() {
         </div>
             <div class="col-md-6 text-center">
                 
-                <img src="img/1.png" class="img-fluid">
+               <!--<img src="img/1.png" class="img-fluid">--->
             </div>
           </div>
         </div>
         <!--<img src="img/wave1.png" class="bottom-img">-->
-        <div class="container">
-            <div class="headerbx one" id="cars movies">
+        <div class="container" id="movies">
+            <div class="headerbx one" style="background-color: #fff;" id="cars">
             <h1>CARTOON ANIMATIONS</h1>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                  <div class="small-img-row">
+                  <div class="small-img-row-i">
                             <iframe src="https://files.im/embed-m74u6q4qjip4.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowFullScreen="allowFullScreen"></iframe>
-                      <p> CARS <br>dual-audio HINDI-ENG, 480p.</p>
+                     <p> CARS (Play Online)<br>dual-audio HINDI-ENG, 480p.<br>&nbsp;</p>
                     </div>
-                    <div class="small-img-row">
+                    <div class="small-img-row-i">
                             <iframe src="https://files.im/embed-qj436of443s9.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowFullScreen="allowFullScreen"></iframe>
-                      <p> CARS 2 <br>dual-audio HINDI-ENG, 480p.</p>
+                      <p> CARS 2 (Play Online)<br>dual-audio HINDI-ENG, 480p.<br>&nbsp;</p>
                     </div>
-                    <div class="small-img-row">
+                    <div class="small-img-row-i">
                             <iframe src="https://files.im/embed-hul68gt4krpu.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowFullScreen="allowFullScreen"></iframe>
-                      <p> CARS 3 <br>dual-audio HINDI-ENG, 480p.</p>
+                      <p> CARS 3 (Play Online)<br>dual-audio HINDI-ENG, 480p.<br>&nbsp;</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -235,10 +273,10 @@ function showSlides() {
         <div class="info-area">
     <div class="container">
         <div class="headerbx one">
-            <h1>What is miniBUNNY  ? </h1>
+            <h1>What is miniBUDDY  ? </h1>
         </div>
         <div class="row">
-            <p>miniBUNNY is a safe platform for kids.This project is focused on keeping ancient tales of Grandmother for today's kids. we plan to build this platform by collecting stories with some beautiful moral speeches for the new generation. we hope and believe that users of this site will take it in a friendly way.
+            <p>miniBUDDY is a safe platform for kids.This project is focused on keeping ancient tales of Grandmother for today's kids. we plan to build this platform by collecting stories with some beautiful moral speeches for the new generation. we hope and believe that users of this site will take it in a friendly way.
             </p>
             <div class="headerbx one">
             <h1>Our goal</h1>
@@ -298,7 +336,7 @@ knowledge. The culture of hearing tales from our grandparents over the mid-night
                 <div class="featuere-card">
                     <h2>Tales</h2>
                     <span></span>
-                    <p>miniBUNNY will tell you very exciting tales with the categories of adventure, prince and princess, horror, ancient tales etc etc...! Users can upload their own tales, ideas, writtings here by contacting <a href="#admin" style="color: blueviolet; text-decoration: none;">admin</a>. miniBUNNY will publish users stories here.
+                    <p>miniBUDDY will tell you very exciting tales with the categories of adventure, prince and princess, horror, ancient tales etc etc...! Users can upload their own tales, ideas, writtings here by contacting <a href="#admin" style="color: blueviolet; text-decoration: none;">admin</a>. miniBUDDY will publish users stories here.
                     </p>  
                       
                 </div>                 
@@ -310,7 +348,7 @@ knowledge. The culture of hearing tales from our grandparents over the mid-night
                 <div class="featuere-card">
                     <h2>Comics</h2>
                     <span></span>
-                    <p>miniBUNNY is here for providing lots of comics of super heros, marvel, DC etc etc! Users can read comics for free . It is just the begining... we will upload here latest comics. Follow us on social media for latest updates. Thank you (^_^) .
+                    <p>miniBUDDY is here for providing lots of comics of super heros, marvel, DC etc etc! Users can read comics for free . It is just the begining... we will upload here latest comics. Follow us on social media for latest updates. Thank you (^_^) .
                        </p>      
                          
                 </div>                 
@@ -320,7 +358,7 @@ knowledge. The culture of hearing tales from our grandparents over the mid-night
                 <div class="featuere-card">
                     <h2>Cartoon Animation</h2>
                     <span></span>
-                    <p>miniBUNNY is cool site for kids. Users can watch lots of cartoon movies here online. And they can download their favourite movies for free. Our App on android platform will release soon. Use <a style=" text-decoration: none; color: blueviolet;" href="https://try.bravesoftware.com/">Brave Browser</a> for less data consume.
+                    <p>miniBUDDY is cool site for kids. Users can watch lots of cartoon movies here online. And they can download their favourite movies for free. Our App on android platform will release soon. Use <a style=" text-decoration: none; color: blueviolet;" href="https://try.bravesoftware.com/">Brave Browser</a> for less data consume.
                     </p>      
                          
                 </div>                 
@@ -385,9 +423,9 @@ knowledge. The culture of hearing tales from our grandparents over the mid-night
 
                 <ul class="right">
                     <strong>Q1. 2021</strong>
-                    <li>Idea of miniBUNNY  </li>
-                    <li>Team for miniBUNNY </li>
-                    <li>Idea for miniBUNNY cartoon animation </li>
+                    <li>Idea of miniBUDDY  </li>
+                    <li>Team for miniBUDDY </li>
+                    <li>Idea for miniBUDDY cartoon animation </li>
                 </ul>
 
                 <ul class="left">
@@ -428,7 +466,7 @@ knowledge. The culture of hearing tales from our grandparents over the mid-night
             <h1>Team </h1>
         </div>
         <div class="row">
-            <p>miniBUNNY team is a team of developers and we analysts the site everyday. There is not any violating content. For any issue or suggestions , users can report to admin by contacting admin. Our Team will reslove it within 24 hours. 
+            <p>miniBUDDY team is a team of developers and we analysts the site everyday. There is not any violating content. For any issue or suggestions , users can report to admin by contacting admin. Our Team will reslove it within 24 hours. 
             </p>
         </div>
     </div>
