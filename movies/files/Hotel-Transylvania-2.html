@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>miniBUNNY</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+     <!----------------------------------->
+     <section id="nav-bar">
+<nav class="navbar navbar-expand-md" id="header-top">
+  <a class="navbar-brand" href="#"><h1 style="font-size: 20px; margin-left: 10px;color: black;">miniBUNNY</h1></a>
+    <div class="search-container">
+    <div class="dropdown">
+  <a class="search-btn dropdown-toggle" type="button" data-toggle="dropdown">Search <i class="fa fa-search"></i>  
+  <span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#">&nbsp;TALES</a></li>
+    <li><a href="#">&nbsp;COMICS</a></li>
+    <li><a href="https://minibuddy.github.io/movies/movies.html">&nbsp;MOVIES</a></li>
+  </ul>
+</div>
+    </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
+   <i class="fa fa-bars"></i>
+  </button>
+  <div class="collapse  navbar-collapse"  data-toggle="collapse" data-target="#collapsibleNavbar"  id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link btn#"  href="https://minibuddy.github.io/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#tales">TALES</a> 
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#comics">COMICS</a> 
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="https://minibuddy.github.io/movies/movies.html">ANIMATION MOVIES</a> 
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about-us">ABOUT US</a>
+      </li>    
+        <li class="nav-item">
+        <a class="nav-link" href="#social-media">CONTACT US</a>
+      </li> 
+    </ul>
+  </div>  
+</nav>
+</section>
+    
+    <div class="container">
+<ul id="myUL">
+    <li><a href="#"><center>Hotel Transylvania 2</center><br>
+      <video src="https://www.dropbox.com/s/piejiaac0wm4zt5/Hotel%20Transylvania%202%202015%20Hindi%20Dual%20Audio%20480p%20miniBUDDY.mp4?raw=1" width="320" height="240" controlslist="nodownload" controls></video><br><img class="des-img" src="../../img/des.png">
+      <img href="#" class="download-btn extra-img" src="../../img/download.png">
+      <div class="countdown"></div>
+      <div class="pleaseWait-text">Please wait...</div>
+        <div><p>Descriptios:</p><br>
+            <p></p>
+        </div>
+      <div class="manualDownload-text">
+        If the download didn't start automatically, <a href="" class="manualDownload-link">click here.</a>
+      </div>
+        </a></li>
+    <div>
+            <h>RELATED : </h>
+    </div>
+</ul>
+        
+        <script type="text/javascript">
+    const downloadBtn = document.querySelector(".download-btn");
+    const countdown = document.querySelector(".countdown");
+    const pleaseWaitText = document.querySelector(".pleaseWait-text");
+    const manualDownloadText = document.querySelector(".manualDownload-text");
+    const manualDownloadLink = document.querySelector(".manualDownload-link");
+    var timeLeft = 30;
+
+    downloadBtn.addEventListener("click", () => {
+      downloadBtn.style.display = "none";
+      countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span> seconds."; //for quick start of countdown
+
+      var downloadTimer = setInterval(function timeCount(){
+        timeLeft -= 1;
+        countdown.innerHTML = "Download will begin automatically in <span>" + timeLeft + "</span> seconds.";
+
+        if(timeLeft <= 0){
+          clearInterval(downloadTimer);
+          pleaseWaitText.style.display = "block";
+          let download_href = "TestFile.zip"; //enter the downloadable file link URL here
+          window.location.href = download_href;
+          manualDownloadLink.href = download_href;
+
+          setTimeout(() => {
+            pleaseWaitText.style.display = "none";
+            manualDownloadText.style.display = "block";
+          }, 4000);
+        }
+      }, 1000);
+    });
+    </script>
+
+    </div>            
+</body>
+</html>
