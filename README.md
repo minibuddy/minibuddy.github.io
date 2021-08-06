@@ -1,1 +1,1 @@
-# minibunnny.github.io
+# minibuddy.github.io
